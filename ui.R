@@ -1,9 +1,10 @@
 library(shiny)
 
+source("ENV.R")
 shinyUI(fluidPage(
 
   # Application title
-  titlePanel("Histogram Demo"),
+  titlePanel(paste0("Histogram Demo from ", ENV.NAME)),
 
   # Sidebar with a slider input for number of bins
   sidebarLayout(
