@@ -1,0 +1,97 @@
+echo -n "What is your target enviroment [dev, test, uat, prod]?  "
+read input
+
+if [ $input == "dev" ]
+then
+	echo -n "Are you sure you want to deploy to $input enviroment [y,n]  "
+	read selection
+
+	if [ $selection = "y" ]
+	then
+		echo "getting latest code form source control (git)....."
+		sudo git pull
+		
+		echo "copying configuration files....."
+		sudo cp ENV.R.TST ENV.R
+		
+		echo "restarting the shiny server....."
+		sudo systemctl restart shiny-server
+		
+		echo "finish deployement......"
+
+	else 
+		echo "Deployment Aborted...."
+	fi
+
+elif [ $input == "test" ]
+then
+	echo -n "Are you sure you want to deploy to $input enviroment [y,n]  "
+	read selection
+
+	if [ $selection = "y" ]
+	then
+		echo "getting latest code form source control (git)....."
+		sudo git pull
+		
+		echo "copying configuration files....."
+		sudo cp ENV.R.TST ENV.R
+		
+		echo "restarting the shiny server....."
+		sudo systemctl restart shiny-server
+		
+		echo "finish deployement......"
+
+	else 
+		echo "Deployment Aborted...."
+	fi
+
+elif [ $input == "uat" ]
+then
+	echo -n "Are you sure you want to deploy to $input enviroment [y,n]  "
+	read selection
+
+	if [ $selection = "y" ]
+	then
+		echo "getting latest code form source control (git)....."
+		sudo git pull
+		
+		echo "copying configuration files....."
+		sudo cp ENV.R.TST ENV.R
+		
+		echo "restarting the shiny server....."
+		sudo systemctl restart shiny-server
+		
+		echo "finish deployement......"
+
+	else 
+		echo "Deployment Aborted...."
+	fi
+
+elif [ $input == "prod" ]
+then
+	echo -n "Are you sure you want to deploy to $input enviroment [y,n]  "
+	read selection
+
+	if [ $selection = "y" ]
+	then
+		echo "getting latest code form source control (git)....."
+		sudo git pull
+		
+		echo "copying configuration files....."
+		sudo cp ENV.R.TST ENV.R
+		
+		echo "restarting the shiny server....."
+		sudo systemctl restart shiny-server
+		
+		echo "finish deployement......"
+
+	else 
+		echo "Deployment Aborted...."
+	fi
+
+else
+    echo "Invalid selection............"
+fi
+       
+
+
